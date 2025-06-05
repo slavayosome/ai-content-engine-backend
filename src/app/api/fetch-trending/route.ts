@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
       throw new Error(`Failed to fetch profiles: ${profilesError.message}`)
     }
 
-    const uniqueBroadFields = [...new Set(profiles?.map(p => p.broad_field) || [])]
+    const uniqueBroadFields = Array.from(new Set(profiles?.map((p: any) => p.broad_field) || []))
     console.log(`Found ${uniqueBroadFields.length} unique broad fields:`, uniqueBroadFields)
 
     let saved = 0

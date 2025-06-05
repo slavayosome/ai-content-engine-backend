@@ -48,7 +48,7 @@ export async function GET(request: NextRequest) {
           if (articleBroadField !== userBroadField) return false
 
           // Check for keyword matches in title or description
-          const hasKeywordMatch = userKeywords.some(keyword => 
+          const hasKeywordMatch = userKeywords.some((keyword: string) => 
             articleTitle.includes(keyword) || articleDesc.includes(keyword)
           )
 
