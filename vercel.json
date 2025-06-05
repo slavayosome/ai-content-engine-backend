@@ -1,0 +1,21 @@
+{
+  "cron": [
+    {
+      "path": "/api/fetch-trending",
+      "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/map-cache-to-users",
+      "schedule": "5 * * * *"
+    },
+    {
+      "path": "/api/purge-cache",
+      "schedule": "0 2 * * *"
+    }
+  ],
+  "functions": {
+    "src/app/api/*/route.ts": {
+      "maxDuration": 300
+    }
+  }
+} 
